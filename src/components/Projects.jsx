@@ -9,7 +9,7 @@ export default function Projects() {
           <p className="section__index">01 / Projects</p>
           <h2 className="section__title">精选项目</h2>
           <p className="section__lead">
-            从金融监控到桌面 AI，再到视觉识别 —— 关注可用性、稳定性与交付质量。
+            从具身课堂机器人到桌面 AI 工作台，再到金融监控 —— 关注链路闭环与真实落地。
           </p>
         </header>
 

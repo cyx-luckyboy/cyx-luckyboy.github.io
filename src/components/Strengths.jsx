@@ -7,7 +7,9 @@ export default function Strengths() {
         <header className="section__head">
           <p className="section__index">03 / Strengths</p>
           <h2 className="section__title">个人优势</h2>
-          <p className="section__lead">覆盖前后端、Python、小程序、桌面端与具身智能 VLA 等方向。</p>
+          <p className="section__lead">
+            覆盖大模型应用、语音链路、微服务、前端桌面端与具身智能落地。
+          </p>
         </header>
 
         <div className="strength-grid">

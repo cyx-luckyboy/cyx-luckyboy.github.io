@@ -1,6 +1,43 @@
 export default function ProjectVisual({ type, title }) {
   return (
     <div className={`pvis pvis--${type}`} role="img" aria-label={`${title} 预览`}>
+      {type === 'robot' && (
+        <>
+          <div className="pvis__console">
+            <div className="pvis__console-head">
+              <span>ASR → LLM → TTS</span>
+              <em>LIVE</em>
+            </div>
+            <div className="pvis__pipeline">
+              <div className="pvis__pipe">
+                <strong>FunASR</strong>
+                <small>SenseVoice + VAD</small>
+              </div>
+              <span className="pvis__arrow" />
+              <div className="pvis__pipe">
+                <strong>Qwen</strong>
+                <small>课堂上下文</small>
+              </div>
+              <span className="pvis__arrow" />
+              <div className="pvis__pipe">
+                <strong>Seed-TTS</strong>
+                <small>40ms PCM</small>
+              </div>
+            </div>
+            <div className="pvis__wave" aria-hidden="true">
+              {Array.from({ length: 24 }).map((_, i) => (
+                <i key={i} style={{ '--i': i }} />
+              ))}
+            </div>
+            <div className="pvis__console-foot">
+              <span>G1 Classroom</span>
+              <span>barge-in ready</span>
+            </div>
+          </div>
+          <div className="pvis__glow" />
+        </>
+      )}
+
       {type === 'finance' && (
         <>
           <div className="pvis__panel">
@@ -41,30 +78,13 @@ export default function ProjectVisual({ type, title }) {
               <span />
             </div>
             <div className="pvis__chat">
-              <div className="pvis__bubble pvis__bubble--user">切换 DeepSeek，继续刚才的任务</div>
+              <div className="pvis__bubble pvis__bubble--user">
+                切换 Claude，用本机 Agent 整理会议纪要
+              </div>
               <div className="pvis__bubble pvis__bubble--bot">
                 <span className="pvis__cursor" />
-                流式回复中 · Markdown / 代码高亮就绪
+                工具循环中 · 文件检索 / 结构化总结就绪
               </div>
-            </div>
-          </div>
-          <div className="pvis__glow" />
-        </>
-      )}
-
-      {type === 'vision' && (
-        <>
-          <div className="pvis__frame">
-            <div className="pvis__scan" />
-            <div className="pvis__face">
-              <span className="pvis__corner tl" />
-              <span className="pvis__corner tr" />
-              <span className="pvis__corner bl" />
-              <span className="pvis__corner br" />
-            </div>
-            <div className="pvis__status">
-              <strong>MATCH 92%+</strong>
-              <span>签到耗时 {'< 2s'}</span>
             </div>
           </div>
           <div className="pvis__glow" />

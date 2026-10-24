@@ -1,10 +1,10 @@
 export const profile = {
   name: '陈艺祥',
   nameEn: 'Chen Yixiang',
-  role: '全栈开发 · AI 应用',
-  tagline: '用克制的界面，承载可靠的交互。',
+  role: '大模型应用开发 · 具身智能',
+  tagline: '把大模型接到真实场景：语音、Agent 与具身课堂。',
   intro:
-    '硕士在读，深耕前端开发。具备扎实的 HTML/CSS/JavaScript 基础与 Vue、React 生态实战经验，熟悉工程化与性能优化。拥有 6 个月前端实习与多个完整项目经验，可独立完成从需求分析到上线部署的全流程交付。熟练使用 Cursor、Claude Code 等 AI 开发工具，持续关注技术落地与体验质量。',
+    '硕士在读，专注大模型应用开发。具备完整落地经验：参与宇树 G1 具身智能教育机器人的语音交互与 LLM 内容生成链路；独立开发开源桌面 AI 工作台（多厂商模型、持续语音对话、本机 Agent、会议记录）。熟练使用 Python / FastAPI 构建微服务，掌握 Vue3 / React 全栈开发，熟悉 Docker 部署与 Git 协作；动手能力强，从音色克隆、机器人控制到桌面端打包均有实践。',
   avatarText: '陈',
   location: '广东 · 惠州 / 广州',
   school: '广州大学 · 网络与信息安全（硕士）',
@@ -15,20 +15,30 @@ export const profile = {
 }
 
 export const stats = [
-  { value: '6+', label: '月前端实习' },
-  { value: '4+', label: '完整项目' },
-  { value: '10+', label: '核心模块' },
+  { value: '13+', label: '课堂微服务' },
+  { value: '10+', label: '大模型厂商' },
+  { value: '3', label: '段实习 / 校招' },
   { value: '3.65', label: '本科 GPA' },
 ]
 
 export const experiences = [
   {
+    period: '2026.06 — 2026.09',
+    company: '广州数志科技有限公司',
+    title: '大模型应用开发实习生（具身智能方向）',
+    points: [
+      '参与宇树 G1 智慧教育项目，负责语音交互全链路（ASR→LLM→TTS）与对话打断（barge-in）',
+      '独立对接 Seed-TTS 流式合成与 CosyVoice 本地合成，完成音色复刻、BGM 混音与字幕同步',
+      '基于 FunASR 构建本地实时 ASR；用 Qwen 实现课堂问答与转写纠错；参与数字人接入与 Docker 双节点部署',
+    ],
+  },
+  {
     period: '2026.03 — 2026.06',
     company: '北京广通优云科技股份有限公司',
     title: '前端开发工程师（校招）',
     points: [
-      '参与 DIY 平台核心模块开发，Vue2 组件封装与门户性能优化',
-      '独立负责东莞农商行 APP 360 核心模块，React 监控数据接入与渲染',
+      '参与 DIY 平台核心模块开发，React 组件封装与门户性能优化',
+      '独立负责东莞农商行 APP 360 核心模块，完成监控数据接入、可视化渲染与跨域代理',
     ],
   },
   {
@@ -36,9 +46,8 @@ export const experiences = [
     company: '广东海大协华信息科技有限公司',
     title: '前端开发工程师（实习）',
     points: [
-      '微信小程序核心模块：Vue3 + UniApp 商品列表与数据统计',
-      '官网 / 小程序对接 DeepSeek 等大模型，封装 Axios 实现智能问答',
-      '大数据驾驶舱 Demo：Element Plus + ECharts 可视化',
+      '微信小程序核心模块开发（Vue3 + UniApp）',
+      '小程序对接 DeepSeek，实现智能问答；参与大数据驾驶舱可视化（ECharts）',
     ],
   },
 ]
@@ -58,78 +67,73 @@ export const education = [
 
 export const projects = [
   {
-    id: 'app360',
-    title: '东莞农商行 APP 360',
-    subtitle: '金融级监控与业务可视化平台',
-    period: '2026.03 — 至今',
+    id: 'g1-edu',
+    title: '智慧教育机器人',
+    subtitle: '宇树 G1 具身智能课堂教育系统',
+    period: '2026.06 — 至今',
     description:
-      '独立负责银行 APP 360 核心模块全流程开发。基于 React 构建高可用前端应用，完成业务可视化、实时监控对接与模块交互，适配银行移动端高并发与高可靠性要求。',
-    stack: ['React', 'JavaScript', 'Axios', '代理跨域', 'AI 辅助研发'],
+      '基于宇树 G1 的课堂教育机器人，模块化微服务架构（13+ 服务、Docker 双节点）。机器人可独立完成整堂课：自动讲解 PPT、与学生实时语音问答，并根据提问即时生成补充课件。负责 ASR→LLM→TTS 全链路、教案生成管线、课堂问答与状态机编排。',
+    stack: ['Python', 'FastAPI', 'LangChain', 'FunASR', 'Seed-TTS', 'Qwen', 'Docker'],
     links: [],
     accent: '#8fd4c8',
-    visual: 'finance',
+    visual: 'robot',
   },
   {
     id: 'ai-chatbot',
     title: '小猪 AI 助手',
-    subtitle: '跨平台桌面端 AI 对话客户端',
-    period: '2026.02 — 2026.05',
+    subtitle: '开源桌面端 AI 工作台',
+    period: '2026.02 — 至今',
     description:
-      '独立开源项目。基于 Electron 构建桌面 AI 助手，整合多厂商大模型 API、流式对话、语音交互、本地 IndexedDB 隐私存储与附件解析，支持 Windows / macOS。',
-    stack: ['Electron', 'Vue3', 'TypeScript', 'Vite', 'Tailwind'],
+      '独立开源项目。从对话客户端演进为集多厂商大模型、持续语音交互、本机 Agent、会议记录与类 IDE 工作台于一体的个人 AI 工作台。统一适配 10 家厂商 API，自研 Pipecat 语音 Pipeline，支持 Function Calling 本地工具与全量 IndexedDB 隐私存储。',
+    stack: ['Electron', 'Vue3', 'TypeScript', 'Pipecat', 'GPT-SoVITS', 'Monorepo'],
     links: [{ label: 'GitHub', href: 'https://github.com/cyx-luckyboy/AI_Chatbot.git' }],
     accent: '#c4b59a',
     visual: 'ai',
   },
   {
-    id: 'face-checkin',
-    title: '人脸识别签到系统',
-    subtitle: 'OpenCV + Flask 智能签到',
-    period: '2025.05 — 2025.06',
+    id: 'app360',
+    title: '东莞农商行 APP 360',
+    subtitle: '金融级监控与业务可视化平台',
+    period: '2026.03 — 至今',
     description:
-      '独立设计实现人脸采集、模型训练、实时识别与签到管理。识别准确率 92%+，单次签到耗时 < 2 秒，支持 Excel 导出与邮件通知。',
-    stack: ['Python', 'OpenCV', 'Flask', 'LBPH', 'JavaScript'],
-    links: [
-      {
-        label: 'GitHub',
-        href: 'https://github.com/cyx-luckyboy/Facial_Recognition_System.git',
-      },
-    ],
+      '独立负责银行 APP 360 核心模块全流程开发。基于 React 实现监控数据实时接入与可视化展示，通过代理配置与请求封装解决跨域问题，满足金融级稳定性要求。',
+    stack: ['React', 'JavaScript', 'Axios', '代理跨域', 'AI 辅助研发'],
+    links: [],
     accent: '#9bb0c7',
-    visual: 'vision',
+    visual: 'finance',
   },
 ]
 
 export const strengths = [
   {
-    title: '前后端开发',
-    desc: '熟悉 Vue / React 前端工程与 Node / Flask 接口协作，可独立完成页面、组件、联调与跨域治理。',
-    tags: ['Vue', 'React', 'Axios', '工程化'],
+    title: '大模型应用开发',
+    desc: '熟悉 OpenAI 兼容协议、流式输出、Function Calling 与多模态输入；掌握 Prompt Engineering 与 Agent 工具调用，落地 LangChain / LlamaIndex。',
+    tags: ['LangChain', 'Agent', '流式输出'],
   },
   {
-    title: 'Python',
-    desc: '具备 Python 全栈与算法落地经验，覆盖 Flask API、OpenCV 视觉处理、数据处理与模型训练流程。',
-    tags: ['Flask', 'OpenCV', '数据处理'],
+    title: '语音链路 ASR / TTS',
+    desc: '具备 FunASR 实时识别、Seed-TTS 流式合成、CosyVoice / GPT-SoVITS 音色克隆经验，支持 barge-in 打断与字幕同步。',
+    tags: ['FunASR', 'Seed-TTS', '音色克隆'],
   },
   {
-    title: '小程序',
-    desc: '使用 Vue3 + UniApp 完成微信小程序核心模块，并完成商品列表、数据统计与 AI 问答对接。',
-    tags: ['UniApp', '微信小程序', 'DeepSeek'],
+    title: '后端与微服务',
+    desc: '熟悉 Python / FastAPI 微服务、RESTful / WebSocket 接口设计与多服务编排，具备 Docker Compose 双节点部署经验。',
+    tags: ['FastAPI', 'WebSocket', 'Docker'],
   },
   {
-    title: '桌面端',
-    desc: '基于 Electron 独立开发跨平台桌面 AI 助手，整合主进程通信、本地存储、流式对话与多模型切换。',
-    tags: ['Electron', 'Vue3', 'TypeScript'],
+    title: '前端与桌面端',
+    desc: '熟悉 HTML/CSS/JavaScript/TypeScript 与 Vue3、React；具备 Electron 跨端桌面应用、小程序与 ECharts 可视化经验。',
+    tags: ['Vue3', 'React', 'Electron'],
   },
   {
-    title: '具身智能 · VLA',
-    desc: '关注 Vision-Language-Action 方向，探索多模态感知、指令理解与动作决策在具身智能场景中的落地。',
-    tags: ['VLA', '多模态', '具身智能'],
+    title: '具身智能落地',
+    desc: '参与宇树 G1 课堂机器人全链路开发，覆盖语音交互、LLM 内容生成、关节控制与课堂状态机编排。',
+    tags: ['宇树 G1', 'unitree_sdk', '状态机'],
   },
   {
-    title: 'AI 应用落地',
-    desc: '熟练对接多厂商大模型 API，结合 Cursor / Claude Code 提升研发效率，完成智能问答与流式交互。',
-    tags: ['大模型', '流式交互', 'Cursor'],
+    title: '荣誉与基础',
+    desc: '蓝桥杯 EDA 省级一等奖；系统集成项目管理工程师；CET-4；校级三好学生与优秀学业一等奖学金。',
+    tags: ['竞赛', '证书', '学业'],
   },
 ]
 

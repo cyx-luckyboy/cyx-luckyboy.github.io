@@ -12,7 +12,7 @@ export default function Contact() {
           做成可用的产品。
         </h2>
         <p className="contact__lead">
-          欢迎邮件或电话沟通，也可通过 GitHub 查看开源作品与持续更新。
+          欢迎交流大模型应用、语音交互与具身智能落地。也可通过 GitHub 查看开源作品。
         </p>
 
         <div className="contact__actions">
